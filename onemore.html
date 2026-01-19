@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Padding Margin Flexbox – Full Practical</title>
+
+<style>
+
+   /* GLOBAL */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    padding: 20px;
+}
+
+section {
+    background: white;
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+hr {
+    margin: 30px 0;
+}
+
+/* COMMON BOX */
+.box {
+    width: 200px;
+    border: 2px solid black;
+    background: lightblue;
+}
+
+/* 
+   SECTION A – FOUNDATIONS
+*/
+
+
+/* Task 1 – Padding */
+.task1 {
+    padding: 40px;
+}
+
+/* Task 2 – Margin */
+.task2 {
+    margin: 40px;
+}
+
+/* Task 3 */
+.padding-box {
+    padding: 30px;
+    background: lightgreen;
+    border: 2px solid black;
+}
+
+.margin-box {
+    margin: 30px;
+    background: lightgreen;
+    border: 2px solid black;
+}
+
+.flex-row {
+    display: flex;
+    gap: 40px;
+}
+
+/* Task 4 */
+.side-space {
+    padding: 10px 50px 30px 70px;
+    margin: 60px 20px;
+}
+
+/* Task 5 */
+.negative-margin {
+    margin-top: -20px;
+}
+
+/* 
+   SECTION B – COLLISION
+*/
+
+
+/* Task 6 – Margin Collapse */
+.box1 {
+    margin-bottom: 50px;
+    background: pink;
+}
+.box2 {
+    margin-top: 30px;
+    background: lightgreen;
+}
+
+.pad1 {
+    padding-bottom: 50px;
+}
+.pad2 {
+    padding-top: 30px;
+}
+
+/* Task 7 – Inline vs Block */
+.inline-span {
+    background: yellow;
+    padding: 20px;
+    margin: 20px;
+}
+
+.inline-block-span {
+    display: inline-block;
+    background: orange;
+    padding: 20px;
+    margin: 20px;
+}
+
+/* 
+   SECTION C – FLEXBOX
+*/
+.flex-container {
+    display: flex;
+    border: 2px dashed black;
+    padding: 10px;
+}
+
+.flex-item {
+    background: lightcoral;
+    padding: 20px;
+}
+
+.flex-gap {
+    gap: 20px;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+/* 
+   SECTION D – ALIGNMENT
+ */
+.space-between {
+    justify-content: space-between;
+}
+
+.center-align {
+    align-items: center;
+    height: 150px;
+}
+
+.auto-margin {
+    margin-left: auto;
+}
+
+/* 
+   SECTION E – DESIGN
+*/
+.button {
+    padding: 15px 30px;
+    margin: 20px;
+    background: royalblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.card {
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+/* 
+   SECTION F – ADVANCED
+*/
+.overflow-container {
+    display: flex;
+    width: 300px;
+    border: 2px solid black;
+}
+
+.overflow-item {
+    width: 150px;
+    padding: 40px;
+    background: skyblue;
+}
+
+.fixed {
+    box-sizing: border-box;
+}
+</style>
+</head>
+
+<body>
+
+<!--  SECTION A -->
+<section>
+<h2>SECTION A – Foundations</h2>
+
+<h3>Task 1: Content vs Padding</h3>
+<div class="box task1">Padding pushes content inward</div>
+
+<hr>
+
+<h3>Task 2: Content vs Margin</h3>
+<div class="box task2">Margin creates outside space</div>
+
+<hr>
+
+<h3>Task 3: Padding vs Margin (Background Test)</h3>
+<div class="flex-row">
+    <div class="padding-box">Padding area is colored</div>
+    <div class="margin-box">Margin area is transparent</div>
+</div>
+
+<hr>
+
+<h3>Task 4: Side Specific Spacing</h3>
+<div class="box side-space">Different padding & margin</div>
+
+<hr>
+
+<h3>Task 5: Negative Margin</h3>
+<div class="box negative-margin">Negative margin pulls element</div>
+</section>
+
+<!-- SECTION B  -->
+<section>
+<h2>SECTION B – Collision</h2>
+
+<h3>Task 6: Margin Collapse</h3>
+<div class="box box1">Box 1</div>
+<div class="box box2">Box 2</div>
+
+<h4>Padding Instead of Margin</h4>
+<div class="box pad1">Pad 1</div>
+<div class="box pad2">Pad 2</div>
+
+<hr>
+
+<h3>Task 7: Inline vs Inline-block</h3>
+<span class="inline-span">Inline</span>
+<span class="inline-block-span">Inline-Block</span>
+</section>
+
+<!-- SECTION C  -->
+<section>
+<h2>SECTION C – Flexbox Introduction</h2>
+
+<h3>Task 8: Why Flex Exists</h3>
+<div class="flex-container">
+    <div class="flex-item">One</div>
+    <div class="flex-item">Two</div>
+    <div class="flex-item">Three</div>
+</div>
+
+<hr>
+
+<h3>Task 9 & 10: Padding, Margin & Gap</h3>
+<div class="flex-container flex-gap">
+    <div class="flex-item">A</div>
+    <div class="flex-item">B</div>
+    <div class="flex-item">C</div>
+</div>
+
+<hr>
+
+<h3>Task 11: Main vs Cross Axis</h3>
+<div class="flex-container flex-column">
+    <div class="flex-item">Top</div>
+    <div class="flex-item">Middle</div>
+    <div class="flex-item">Bottom</div>
+</div>
+</section>
+
+<!-- SECTION D  -->
+<section>
+<h2>SECTION D – Control & Alignment</h2>
+
+<h3>Task 12: justify-content</h3>
+<div class="flex-container space-between">
+    <div class="flex-item">Left</div>
+    <div class="flex-item">Center</div>
+    <div class="flex-item">Right</div>
+</div>
+
+<hr>
+
+<h3>Task 13 & 14: align-items & auto margin</h3>
+<div class="flex-container center-align">
+    <div class="flex-item">Logo</div>
+    <div class="flex-item auto-margin">Menu</div>
+</div>
+</section>
+
+<!--  SECTION E -->
+<section>
+<h2>SECTION E – Design Decisions</h2>
+
+<h3>Task 15: Button Design</h3>
+<button class="button">Click Me</button>
+
+<hr>
+
+<h3>Task 16: Card Component</h3>
+<div class="card">
+    <img src="https://i.pinimg.com/736x/78/c0/ca/78c0cac04caa31888465b5b4d710d13e.jpg">
+    <h3>Card Title</h3>
+    <p>This card uses padding internally.</p>
+    <button class="button">Action</button>
+</div>
+
+<hr>
+
+<h3>Task 17: Box Size Illusion</h3>
+<div class="flex-row">
+    <div class="box task1">Large Padding</div>
+    <div class="box task2">Large Margin</div>
+</div>
+</section>
+
+<!-- SECTION F  -->
+<section>
+<h2>SECTION F – Advanced</h2>
+
+<h3>Task 18: Broken Layout</h3>
+<div class="overflow-container">
+    <div class="overflow-item">Overflow</div>
+    <div class="overflow-item">Overflow</div>
+</div>
+
+<h4>Fixed Using box-sizing</h4>
+<div class="overflow-container">
+    <div class="overflow-item fixed">Fixed</div>
+    <div class="overflow-item fixed">Fixed</div>
+</div>
+</section>
+
+</body>
+</html>
